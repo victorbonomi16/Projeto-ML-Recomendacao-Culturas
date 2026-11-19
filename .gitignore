@@ -1,0 +1,12 @@
+# Ambiente virtual (cada pessoa cria o seu com o requirements.txt)
+.venv/
+
+# Arquivos temporários do Python e do Jupyter
+__pycache__/
+.ipynb_checkpoints/
+
+# Arquivos temporários do Word
+~$*
+
+# Documentos do Word (o relatório vai só em PDF)
+*.docx
