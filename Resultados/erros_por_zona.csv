@@ -1,0 +1,23 @@
+Modelo,Cultura real,Prevista,Zona da área,Prevista é da mesma zona
+SVM,arroz,juta,7,True
+SVM,arroz,juta,7,True
+SVM,arroz,juta,7,True
+SVM,feijão-mariposa,lentilha,5,False
+SVM,milho,algodão,2,True
+Árvore de Decisão,feijão-preto (urad),lentilha,1,True
+Árvore de Decisão,feijão-preto (urad),milho,1,False
+Árvore de Decisão,lentilha,feijão-mariposa,1,True
+Árvore de Decisão,juta,arroz,7,True
+Árvore de Decisão,feijão-preto (urad),feijão-mariposa,1,True
+Árvore de Decisão,feijão-preto (urad),lentilha,1,True
+Árvore de Decisão,feijão-mariposa,lentilha,5,False
+Árvore de Decisão,arroz,juta,7,True
+Árvore de Decisão,lentilha,feijão-mariposa,1,True
+Random Forest,feijão-preto (urad),milho,1,False
+Random Forest,arroz,juta,7,True
+XGBoost,lentilha,feijão-mungo,1,True
+XGBoost,lentilha,feijão-mungo,1,True
+XGBoost,lentilha,feijão-mariposa,1,True
+XGBoost,arroz,juta,7,True
+XGBoost,feijão-guandu,feijão-preto (urad),5,False
+XGBoost,arroz,juta,7,True

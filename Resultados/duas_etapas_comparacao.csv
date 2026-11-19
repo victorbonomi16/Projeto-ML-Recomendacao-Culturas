@@ -1,0 +1,5 @@
+Modelo,Abordagem,Acurácia,F1 (macro),Erros (de 440)
+Random Forest,Modelo único (etapas 6 e 7),0.9954545454545455,0.9954517027687758,2
+Random Forest,Duas etapas (zona → cultura),0.9886363636363636,0.9885738245494344,5
+Árvore de Decisão,Modelo único (etapas 6 e 7),0.9795454545454545,0.9794231513743707,9
+Árvore de Decisão,Duas etapas (zona → cultura),0.9704545454545455,0.970617004192399,13
