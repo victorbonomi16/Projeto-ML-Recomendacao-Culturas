@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recomendação de Culturas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}">
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header class="topo">
+    <div class="topo-conteudo">
+      <span class="selo">Machine Learning · Trabalho II</span>
+      <h1>Qual cultura plantar <em>neste solo?</em></h1>
+      <p class="subtitulo">Ajuste as condições de solo e clima do local, escolha um modelo e veja a cultura recomendada.</p>
+      <ul class="numeros">
+        <li><strong>2.200</strong> amostras</li>
+        <li><strong>22</strong> culturas</li>
+        <li><strong>7</strong> variáveis</li>
+        <li><strong id="qtd-modelos">4</strong> modelos</li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="grade">
+    <!-- Coluna 1: condições do local -->
+    <section class="cartao entradas" aria-labelledby="titulo-entradas">
+      <div class="cartao-topo">
+        <div>
+          <h2 id="titulo-entradas">Condições do local</h2>
+          <p class="apoio">Arraste as barras ou digite o valor. As faixas vão do menor ao maior valor do dataset.</p>
+        </div>
+        <div class="acoes-entrada">
+          <label class="campo-perfil">
+            <span>Preencher com o perfil de</span>
+            <select id="perfil-cultura">
+              <option value="">escolha uma cultura…</option>
+            </select>
+          </label>
+          <button type="button" class="botao-secundario" id="botao-medianas" title="Volta todas as barras para a mediana do dataset">↺ Valores medianos</button>
+        </div>
+      </div>
+      <div id="grupos-atributos"></div>
+    </section>
+
+    <!-- Coluna 2: modelo e resultado -->
+    <aside class="lateral">
+      <section class="cartao" aria-labelledby="titulo-modelo">
+        <h2 id="titulo-modelo">Modelo</h2>
+        <div class="modelos" id="lista-modelos" role="radiogroup" aria-label="Modelo usado na recomendação"></div>
+        <button type="button" class="botao-principal" id="botao-recomendar">
+          <span class="rotulo-botao">Recomendar cultura</span>
+        </button>
+        <label class="alternador">
+          <input type="checkbox" id="atualizar-automatico">
+          <span class="trilho" aria-hidden="true"></span>
+          Atualizar sozinho ao mover as barras
+        </label>
+      </section>
+
+      <section class="cartao resultado" id="resultado" aria-live="polite">
+        <div class="vazio">
+          <div class="vazio-icone" aria-hidden="true">🌱</div>
+          <p>Ajuste os valores e clique em <strong>Recomendar cultura</strong>.</p>
+        </div>
+      </section>
+    </aside>
+
+    <!-- Concordância entre os modelos e comparação com o perfil da cultura (aparece após recomendar) -->
+    <section class="cartao detalhes" id="detalhes" aria-live="polite" hidden></section>
+  </main>
+
+  <footer class="rodape">
+    Modelos treinados no notebook <code>recomendacao_culturas.ipynb</code> · Dataset: Crop Recommendation (Kaggle)
+  </footer>
+
+  <!-- Dados da página (limites, modelos e perfis) vindos do arquivo de modelos -->
+  <script>window.INFORMACOES = {{ informacoes | tojson }};</script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
